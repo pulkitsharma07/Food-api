@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get '/food_items/all', to: 'food_items#index'
 
       post '/order/create', to: 'orders#create'
+      get '/order/show', to: 'orders#show'
     end
   end
 end

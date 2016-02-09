@@ -3,9 +3,12 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 	before_action :restrict_access
 
 	def create
-		begin
+
+		#begin
 			str = params[:items].to_json
 			arr = JSON.parse(str)
+
+			p "ssssssssssssssssssssssssssssssss",arr
 
 			od = Order.create
 
@@ -15,11 +18,16 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 
 			@current_user.orders << od
 
-			render json: arr, status: 200
-		rescue
 
-			render json: nil, status: 401
-			
-		end
+			show(od.id)
+		
+	end
+
+
+
+	def show(id=nil)
+
+		xx = Order.find_by(id: id||params[:id], user_id: @current_user.id)
+		render json: xx
 	end
 end

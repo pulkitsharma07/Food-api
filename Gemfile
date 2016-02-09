@@ -11,7 +11,7 @@ gem 'tzinfo-data'
 
 gem 'sqlite3'
 
-
+gem 'active_model_serializers','~> 0.8.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -20,6 +20,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.8.3)
+      activemodel (>= 3.0)
     activejob (4.2.3)
       activesupport (= 4.2.3)
       globalid (>= 0.3.0)
@@ -97,13 +99,14 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2015.6)
+    tzinfo-data (1.2016.1)
       tzinfo (>= 1.0.0)
 
 PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  active_model_serializers (~> 0.8.0)
   rails (= 4.2.3)
   rails-api
   spring
