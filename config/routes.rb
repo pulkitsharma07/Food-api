@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       post '/order/create', to: 'orders#create'
       get '/order/show', to: 'orders#show'
       put '/order/delivered', to: 'orders#delivered'
+
+      put '/order_details/update', to: 'order_details#update'
     end
   end
 end

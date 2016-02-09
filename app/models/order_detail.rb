@@ -3,6 +3,7 @@ class OrderDetail < ActiveRecord::Base
 	validate :valid_quantity
 
 	after_create :reduce_quantity
+	before_destroy :restore_quantity
 
 	belongs_to :order
 	belongs_to :food_item
@@ -18,6 +19,10 @@ class OrderDetail < ActiveRecord::Base
 
 	def reduce_quantity
 		FoodItem.find_by_id(food_item_id).decrement(:quantity_left,quantity).save
+	end
+
+	def restore_quantity
+		FoodItem.find_by_id(food_item_id).increment(:quantity_left,quantity).save
 	end
 
 end

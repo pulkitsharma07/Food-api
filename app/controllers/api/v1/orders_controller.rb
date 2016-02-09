@@ -5,7 +5,6 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 
 	def create
 
-	
 			str = params[:items].to_json
 			arr = JSON.parse(str)
 
@@ -36,6 +35,6 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 	private
 
 	def curr_order
-		@curr_order ||= Order.find_by(id: params[:id], user_id: @current_user.id)
+		@curr_order ||= Order.find_by(id: params[:order_id], user_id: @current_user.id)
 	end
 end
