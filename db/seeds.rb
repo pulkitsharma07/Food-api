@@ -5,5 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-FoodItem.create(name: "Pizza" , price: 60, quantity_left: 40)
-FoodItem.create(name: "Burger" , price: 30, quantity_left: 30)
+FoodItem.create(name: "Pizza" , price: 60, quantity_left: 100)
+FoodItem.create(name: "Burger" , price: 30, quantity_left: 100)
