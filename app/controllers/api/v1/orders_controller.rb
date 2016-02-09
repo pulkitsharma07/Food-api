@@ -4,11 +4,9 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 
 	def create
 
-		#begin
+	
 			str = params[:items].to_json
 			arr = JSON.parse(str)
-
-			p "ssssssssssssssssssssssssssssssss",arr
 
 			od = Order.create
 
@@ -21,12 +19,19 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 
 			show(od.id)
 		
+		
 	end
 
 
+	def delivered
+		od = Order.find_by(id: id||params[:id], user_id: @current_user.id)
+		od.delivered = true
+		od.save
+		show(od.id)
+	end
 
 	def show(id=nil)
-
+		p "HEERREE"
 		xx = Order.find_by(id: id||params[:id], user_id: @current_user.id)
 		render json: xx
 	end
