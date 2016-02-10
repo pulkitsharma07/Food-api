@@ -1,5 +1,8 @@
 == Instructions
 
-`rails s` to start the server
-`rspec` to run the tests ( make sure to run `rake db:migrate RAILS_ENV=test`)
-<tt>rake doc:app</tt>.
+* <tt>rails s</tt> to start the API server
+* <tt>rspec</tt> to run the tests ( make sure to run <tt>rake db:migrate RAILS_ENV=test</tt> before running the tests)
+
+
+== Documentation
+WIP
