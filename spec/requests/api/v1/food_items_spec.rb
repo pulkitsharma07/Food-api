@@ -31,7 +31,6 @@ describe "Food Items Endpoint", :type => :request do
   		get "/api/v1/food_items/view?food_item_id=1"
   		
   		json = JSON.parse(response.body)
-		p json
 		expect(response.status).to eq(200)
 		expect(json["food_item"]["name"]).to eq("Burger")
   		
