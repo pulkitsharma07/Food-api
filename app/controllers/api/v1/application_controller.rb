@@ -29,4 +29,7 @@ class Api::V1::ApplicationController < ActionController::API
     end
   end
 
+  def get_current_order
+    @current_order ||= Order.find_by(id: params[:order_id], user_id: @current_user.id)
+  end
 end
