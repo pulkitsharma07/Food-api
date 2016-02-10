@@ -12,7 +12,7 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 			@current_order = Order.create
 
 			arr.each do |item|
-				OrderDetail.create(order_id: @current_order.id, food_item_id: item["food_item"],quantity: item["quantity"])
+				OrderDetail.create(order_id: @current_order.id, food_item_id: item["food_item_id"],quantity: item["quantity"])
 			end
 
 			@current_user.orders << @current_order

@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       
-      post '/user/new', to: 'users#create'
+      post '/user/create', to: 'users#create'
       get  '/user/orders', to: 'users#orders'
 
       get '/food_items/all', to: 'food_items#index'
+      post '/food_items/create', to: 'food_items#create'
 
       post '/order/create', to: 'orders#create'
       get '/order/view', to: 'orders#show'
