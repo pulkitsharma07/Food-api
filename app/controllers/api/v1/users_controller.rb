@@ -8,8 +8,10 @@ class Api::V1::UsersController < Api::V1::ApplicationController
 		render json: @current_user, status: (@current_user)? 200 : 401
 	end
 
-
-	def chk
-		render json: @current_user, status: 200
+	def orders
+		od = @current_user.orders.all
+		render json: od , status: 200, root: "orders"
 	end
+
+	
 end
