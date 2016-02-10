@@ -5,6 +5,7 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 
 	def create
 
+		begin
 			str = params[:items].to_json
 			arr = JSON.parse(str)
 
@@ -17,7 +18,9 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 			@current_user.orders << @current_order
 
 			show()
-		
+		rescue
+			render json: {"status" => "failure"}, status: 400
+		end
 	end
 
 

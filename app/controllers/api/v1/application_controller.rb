@@ -6,7 +6,7 @@ class Api::V1::ApplicationController < ActionController::API
    def restrict_access
 
      unless restrict_access_by_params || restrict_access_by_header
-       render json: {status: 'failed',message: 'Invalid API Token'}, status: 401
+       render json: {status: 'failure',message: 'Invalid API Token'}, status: 401
        return
      end
    end

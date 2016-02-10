@@ -5,8 +5,14 @@ class Api::V1::UsersController < Api::V1::ApplicationController
 	def create
 		@current_user = params[:username] ? User.create(name: params[:username]) : nil
 
-		render json: @current_user, status: (@current_user)? 200 : 401
+		if @current_user
+			render json: @current_user, status: 200
+		else
+			render json: {"status" => "failure"}, status: 400
+		end
+
 	end
+
 
 	def orders
 		od = @current_user.orders.all
