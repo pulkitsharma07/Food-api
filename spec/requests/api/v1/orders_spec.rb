@@ -42,7 +42,7 @@ describe "Order Endpoint", :type => :request do
 		expect(response.status).to eq (400)
 	end
 	
-	it ": if an order was invalid, quantity_left of a food_item should be unchanged" do
+	it ": if an order was invalid, quantity_left should be unchanged" do
 	
 		#an invalid order
 		post "/api/v1/order/create?api_key=#{@api_key}&items[][food_item_id]=1&items[][quantity]=500"
