@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       post '/user/create', to: 'users#create'
       get  '/user/orders', to: 'users#orders'
 
-      get '/food_items/all', to: 'food_items#index'
+      get '/food_items/view', to: 'food_items#index'
       post '/food_items/create', to: 'food_items#create'
 
       post '/order/create', to: 'orders#create'
