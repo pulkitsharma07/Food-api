@@ -45,6 +45,10 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 	end
 
 	def show()
-		render json: @current_order
+		if @current_order
+			render json: @current_order
+		else
+			render json: {"status" => "failure"}, status: 400
+		end
 	end
 end
