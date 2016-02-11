@@ -5,4 +5,4 @@
 
 
 == Documentation
-WIP
+can be found here http://pulkitsharma07.github.io/Food-api
