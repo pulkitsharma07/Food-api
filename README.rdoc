@@ -6,3 +6,8 @@
 
 == Documentation
 can be found here http://pulkitsharma07.github.io/Food-api
+
+
+== TODO
+
+ * add descriptive failure messages
