@@ -11,12 +11,11 @@ Rails.application.routes.draw do
       post '/order/create', to: 'orders#create'
       get '/order/view', to: 'orders#show'
       put '/order/delivered', to: 'orders#delivered'
-
+      put '/order/update', to: 'orders#update'
 
       post '/payment/received', to: 'payments#received'
       post '/payment/refund', to: 'payments#refund'
 
-      put '/order_details/update', to: 'order_details#update'
     end
   end
 end

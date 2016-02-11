@@ -145,7 +145,7 @@ describe "Order Update", :type => :request do
 	
 		it "should make correct changes in the quantity_left of food_item" do
 		
-			put "/api/v1/order_details/update?api_key=#{@api_key}&order_id=1&order_detail_id=1&food_item_id=1&quantity=20"
+			put "/api/v1/order/update?api_key=#{@api_key}&order_id=1&order_detail_id=1&food_item_id=1&quantity=20"
 			
 			get "/api/v1/food_items/view?food_item_id=1"
 			json = JSON.parse(response.body)
