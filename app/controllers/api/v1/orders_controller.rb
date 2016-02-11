@@ -43,9 +43,13 @@ class Api::V1::OrdersController < Api::V1::ApplicationController
 	end
 
 	def delivered
-		@current_order.delivered = true
-		@current_order.save
-		show()
+		begin
+			@current_order.delivered = true
+			@current_order.save
+			show()
+		rescue
+			render json: {"status" => "failure"}, status: 400
+		end
 	end
 
 	def show()
